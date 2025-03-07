@@ -14,6 +14,10 @@ public class Blackboard : MonoBehaviour {
     public UnityAction<float> OnUpdateBallSpeed;
     public UnityAction<PaddleType> OnPaddleTriggered;
     public UnityAction<PaddleType> OnPaddleReset;
+    public UnityAction OnBallCharge;
+    public UnityAction OnBallLost;
+    public bool IsCharging { get { return _inputs.IsCharging; } }
+    public bool BallLaunched;
 
     InputManager _inputs;
 
@@ -36,15 +40,14 @@ public class Blackboard : MonoBehaviour {
             OnPaddleTriggered?.Invoke(PaddleType.Right);
         else
             OnPaddleReset?.Invoke(PaddleType.Right);
+
+        if(_inputs.IsCharging)
+            OnBallCharge?.Invoke();
     }
 
     public void UpdateBallSpeed(float speed) {
         BallSpeed = speed;
         OnUpdateBallSpeed?.Invoke(speed);
-    }
-
-    public void PaddleTriggered(PaddleType type) {
-
     }
 
     #region Pause/Resume

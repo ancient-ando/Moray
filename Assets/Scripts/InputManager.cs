@@ -8,8 +8,8 @@ public class InputManager: GameplayMonoBehaviour{
     public Vector2 move;
     public bool LeftPaddle;
     public bool RightPaddle;
-    public bool interact;
-    public float lean;
+    public bool IsCharging;
+    public bool IsLaunching;
 
     [Header("Movement Settings")]
     public bool analogMovement;
@@ -31,12 +31,12 @@ public class InputManager: GameplayMonoBehaviour{
         RightPaddleInput(value.isPressed);
     }
 
-    public void OnInteract(InputValue value) {
-        Interact(value.isPressed);
+    public void OnChargeBall(InputValue value) {
+        Charge(value.isPressed);
     }
 
-    public void OnLean(InputValue value) {
-        Lean(value.Get<float>());
+    public void OnLaunchBall(InputValue value) {
+        Launch(value.isPressed);
     }
 #endif
 
@@ -53,12 +53,12 @@ public class InputManager: GameplayMonoBehaviour{
         RightPaddle = newPaddleState;
     }
 
-    public void Interact(bool newInteractState) {
-        interact = newInteractState;
+    public void Charge(bool _newChargingState) {
+        IsCharging = _newChargingState;
     }
 
-    public void Lean(float newLeanState) {
-        lean = newLeanState;
+    public void Launch(bool _newLaunchState) {
+        IsLaunching = _newLaunchState;
     }
 
 

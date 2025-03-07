@@ -7,8 +7,10 @@ public abstract class GameplayMonoBehaviour : MonoBehaviour {
     public bool _initialised;
 
     protected virtual void Awake() {
-        if (!_pausable)
+        if (!_pausable) {
+            _initialised = true;
             return;
+        }
         if (Blackboard.s_Instance == null)
             return;
 
