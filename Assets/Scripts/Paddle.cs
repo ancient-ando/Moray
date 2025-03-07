@@ -8,13 +8,20 @@ public enum PaddleType {
 }
 public class Paddle : GameplayMonoBehaviour {
     public PaddleType PaddleType;
+    [SerializeField]
+    float _lerpTime = 0.1f;
     Vector3 _defaultRotation;
+    Rigidbody2D _rb;
+    [SerializeField]
+    float _torque = 1000;
 
     protected override void Awake() {
         base.Awake();
 
         Blackboard.s_Instance.OnPaddleTriggered += OnPaddleTriggerd;
         Blackboard.s_Instance.OnPaddleReset += OnPaddleReset;
+
+        _rb = GetComponent<Rigidbody2D>();
 
         _defaultRotation = transform.transform.eulerAngles;
     }
@@ -37,10 +44,12 @@ public class Paddle : GameplayMonoBehaviour {
 
         switch(PaddleType) {
             case PaddleType.Left:
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -315), 0.1f);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, -315), _lerpTime);
+            _rb.AddTorque(_torque);
             break;
             case PaddleType.Right:
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 315), 0.1f);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 315), _lerpTime);
+            _rb.AddTorque(-_torque);
             break;
         }
     }
@@ -51,6 +60,6 @@ public class Paddle : GameplayMonoBehaviour {
         if (PaddleType != _paddleType)
             return;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(_defaultRotation), 0.1f);
+        //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(_defaultRotation), 0.1f);
     }
 }
