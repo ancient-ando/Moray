@@ -22,9 +22,11 @@ public class Ball : GameplayMonoBehaviour {
     }
 
     private void FixedUpdate() {
+        // Limit the speed of the ball
         if (_rb.velocity.magnitude > MaxSpeed) {
             _rb.velocity = _rb.velocity.normalized * MaxSpeed;
         }
+
         Blackboard.s_Instance.UpdateBallSpeed(_rb.velocity.magnitude);
     }
 }

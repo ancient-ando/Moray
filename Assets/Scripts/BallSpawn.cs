@@ -6,11 +6,11 @@ public class BallSpawn : MonoBehaviour {
     public GameObject BallPrefab;
 
     void Awake() {
-        Blackboard.s_Instance.OnBallLost += SpawnBall;
+        Blackboard.s_Instance.OnSpawnBall += SpawnBall;
     }
 
     void OnDestroy() {
-        Blackboard.s_Instance.OnBallLost -= SpawnBall;
+        Blackboard.s_Instance.OnSpawnBall -= SpawnBall;
     }
 
     void SpawnBall() {

@@ -23,7 +23,7 @@ public class Hole : GameplayMonoBehaviour {
 
         yield return new WaitForSeconds(1);
         Destroy(_ball.gameObject);
-        Blackboard.s_Instance.OnBallLost?.Invoke();
+        Blackboard.s_Instance.OnSpawnBall?.Invoke();
     }
 
 }

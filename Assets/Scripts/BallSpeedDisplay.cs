@@ -12,6 +12,10 @@ public class BallSpeedText : MonoBehaviour {
         Blackboard.s_Instance.OnUpdateBallSpeed += UpdateText;
     }
 
+    private void OnDestroy() {
+        Blackboard.s_Instance.OnUpdateBallSpeed -= UpdateText;
+    }
+
     void UpdateText(float speed) {
         _text.text = speed.ToString("Ball Speed: " + speed);
     }
