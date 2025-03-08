@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: 2c6f1bf09e441bc499820903fcf82b65
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0.1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Solor-system-level-1_0
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1149
+        width: 234
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34590d14070225a4f94077debf94b842
+      internalID: -963441441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_1
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 1149
+        width: 184
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c9e55e2c9672340bbbed58c28c513d
+      internalID: -531243935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1290
+        width: 244
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b53b6be86166e64dbf773c472fbf145
+      internalID: 2034096334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_3
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 896
+        width: 165
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cff2191e9b098c4396d609fc9ec2fb0
+      internalID: 374909602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 580
+        width: 191
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6fcc88d0a2caa49885172190b37733
+      internalID: -821133393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 197
+        width: 200
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b727f91e5f9b4f4c8fc8c902f07205b
+      internalID: -1493886325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_6
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 364
+        width: 215
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 852b98b167b181348a64cb19ab7eca9b
+      internalID: 1472818492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_7
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 252
+        width: 134
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3ba44b0ef374a4bbe4a404335f26b7
+      internalID: 949960604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_8
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 364
+        width: 142
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 655e15990e4f1954abbff5ca5ec0628c
+      internalID: -1778035063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Solor-system-level-1_9
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 212
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87c6c7ba304a7f4ca687ed2b1181d25
+      internalID: 1907196386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -410.5, y: -484}
+      - {x: -432.5, y: -434}
+      - {x: -481.5, y: -407}
+      - {x: -543.5, y: -407}
+      - {x: -599.5, y: -441}
+      - {x: -610.5, y: -477}
+      - {x: -614.5, y: -500}
+      - {x: -614.5, y: -528}
+      - {x: -606.5, y: -555}
+      - {x: -560.5, y: -599}
+      - {x: -534.5, y: -605}
+      - {x: -487.5, y: -605}
+      - {x: -464.5, y: -599}
+      - {x: -418.5, y: -558}
+      - {x: -410.5, y: -538}
+    - - {x: 596.5, y: -524}
+      - {x: 570.5, y: -525}
+      - {x: 553.5, y: -542}
+      - {x: 556.5, y: -573}
+      - {x: 571.5, y: -587}
+      - {x: 591.5, y: -586}
+      - {x: 603.5, y: -578}
+      - {x: 612.5, y: -562}
+      - {x: 611.5, y: -540}
+    - - {x: -17.5, y: -422}
+      - {x: -46.5, y: -407}
+      - {x: -93.5, y: -407}
+      - {x: -135.5, y: -425}
+      - {x: -139.5, y: -441}
+      - {x: -139.5, y: -498}
+      - {x: -128.5, y: -531}
+      - {x: -88.5, y: -550}
+      - {x: -54.5, y: -550}
+      - {x: -26.5, y: -539}
+      - {x: -1.5, y: -503}
+      - {x: -1.5, y: -453}
+      - {x: -2.5, y: -448}
+    - - {x: -134.5, y: -293}
+      - {x: -147.5, y: -263}
+      - {x: -205.5, y: -218}
+      - {x: -278.5, y: -218}
+      - {x: -317.5, y: -237}
+      - {x: -346.5, y: -270}
+      - {x: -353.5, y: -290}
+      - {x: -353.5, y: -350}
+      - {x: -351.5, y: -370}
+      - {x: -318.5, y: -419}
+      - {x: -275.5, y: -438}
+      - {x: -194.5, y: -438}
+      - {x: -156.5, y: -413}
+      - {x: -135.5, y: -380}
+      - {x: -134.5, y: -368}
+    - - {x: 138.5, y: -296}
+      - {x: 32.5, y: -296}
+      - {x: 15.5, y: -319}
+      - {x: 15.5, y: -398}
+      - {x: 20.5, y: -425}
+      - {x: 53.5, y: -438}
+      - {x: 115.5, y: -438}
+      - {x: 134.5, y: -434}
+      - {x: 161.5, y: -393}
+      - {x: 161.5, y: -335}
+      - {x: 142.5, y: -297}
+    - - {x: -53.5, y: -86}
+      - {x: -87.5, y: -51}
+      - {x: -120.5, y: -34}
+      - {x: -181.5, y: -34}
+      - {x: -214.5, y: -41}
+      - {x: -246.5, y: -97}
+      - {x: -246.5, y: -154}
+      - {x: -240.5, y: -164}
+      - {x: -232.5, y: -187}
+      - {x: -197.5, y: -219}
+      - {x: -182.5, y: -222}
+      - {x: -106.5, y: -222}
+      - {x: -63.5, y: -185}
+      - {x: -51.5, y: -150}
+      - {x: -51.5, y: -100}
+    - - {x: -120.5, y: 247}
+      - {x: -132.5, y: 251}
+      - {x: -183.5, y: 251}
+      - {x: -209.5, y: 247}
+      - {x: -238.5, y: 225}
+      - {x: -246.5, y: 204}
+      - {x: -246.5, y: 156}
+      - {x: -229.5, y: 111}
+      - {x: -187.5, y: 94}
+      - {x: -127.5, y: 94}
+      - {x: -100.5, y: 102}
+      - {x: -77.5, y: 152}
+      - {x: -77.5, y: 193}
+      - {x: -92.5, y: 222}
+    - - {x: -275.5, y: 448}
+      - {x: -275.5, y: 493}
+      - {x: -283.5, y: 519}
+      - {x: -301.5, y: 549}
+      - {x: -328.5, y: 579}
+      - {x: -365.5, y: 587}
+      - {x: -439.5, y: 587}
+      - {x: -486.5, y: 551}
+      - {x: -513.5, y: 508}
+      - {x: -513.5, y: 458}
+      - {x: -511.5, y: 432}
+      - {x: -490.5, y: 391}
+      - {x: -462.5, y: 365}
+      - {x: -435.5, y: 351}
+      - {x: -417.5, y: 347}
+      - {x: -361.5, y: 347}
+      - {x: -310.5, y: 374}
+      - {x: -286.5, y: 406}
+      - {x: -276.5, y: 429}
+    - - {x: -58.5, y: 475}
+      - {x: -88.5, y: 526}
+      - {x: -115.5, y: 533}
+      - {x: -178.5, y: 533}
+      - {x: -212.5, y: 521}
+      - {x: -246.5, y: 469}
+      - {x: -246.5, y: 406}
+      - {x: -241.5, y: 381}
+      - {x: -210.5, y: 351}
+      - {x: -184.5, y: 347}
+      - {x: -115.5, y: 347}
+      - {x: -94.5, y: 358}
+      - {x: -60.5, y: 396}
+      - {x: -58.5, y: 409}
+    - - {x: 122.5, y: 709}
+      - {x: 99.5, y: 735}
+      - {x: 53.5, y: 747}
+      - {x: -15.5, y: 747}
+      - {x: -91.5, y: 690}
+      - {x: -95.5, y: 660}
+      - {x: -95.5, y: 590}
+      - {x: -88.5, y: 556}
+      - {x: -34.5, y: 499}
+      - {x: -18.5, y: 488}
+      - {x: 67.5, y: 488}
+      - {x: 75.5, y: 489}
+      - {x: 117.5, y: 522}
+      - {x: 152.5, y: 574}
+      - {x: 152.5, y: 659}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Solor-system-level-1_0: -963441441
+      Solor-system-level-1_1: -531243935
+      Solor-system-level-1_2: 2034096334
+      Solor-system-level-1_3: 374909602
+      Solor-system-level-1_4: -821133393
+      Solor-system-level-1_5: -1493886325
+      Solor-system-level-1_6: 1472818492
+      Solor-system-level-1_7: 949960604
+      Solor-system-level-1_8: -1778035063
+      Solor-system-level-1_9: 1907196386
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
