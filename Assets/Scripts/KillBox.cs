@@ -10,6 +10,7 @@ public class KillBox : MonoBehaviour {
             if(Blackboard.s_Instance.Lives >= 0)
                 Blackboard.s_Instance.OnSpawnBall?.Invoke();
             else {
+                Blackboard.s_Instance.CheckHighScore();
                 Debug.Log("Game Over");
             }
         }

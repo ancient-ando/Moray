@@ -22,8 +22,10 @@ public class Blackboard : MonoBehaviour {
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
     public int Lives { get; private set; } = 3;
+    
+    //KM - Code for Score
     public int CurrentScore { get; private set; } = 0;
-
+    public HighScoreData highScoreData;
 
     InputManager _inputs;
 
@@ -78,6 +80,13 @@ public class Blackboard : MonoBehaviour {
     public void Resume() {
         Paused = false;
         OnResume?.Invoke();
+    }
+
+    //KM - This should update the highscores?
+    public void CheckHighScore() {
+        if (highScoreData != null) {
+            highScoreData.AddScore(CurrentScore);
+        }
     }
     #endregion
 }
