@@ -47,8 +47,14 @@ public class Blackboard : MonoBehaviour {
         else
             OnPaddleReset?.Invoke(PaddleType.Right);
 
-        if(_inputs.IsCharging)
+        if (_inputs.IsCharging)
             OnBallCharge?.Invoke();
+
+        if (!Paused && _inputs.IsPaused)
+            Pause();
+        else
+        if (Paused && !_inputs.IsPaused)
+            Resume();
     }
 
     public void UpdateBallSpeed(float speed) {

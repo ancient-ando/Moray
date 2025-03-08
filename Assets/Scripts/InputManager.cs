@@ -10,6 +10,7 @@ public class InputManager: GameplayMonoBehaviour{
     public bool RightPaddle;
     public bool IsCharging;
     public bool IsLaunching;
+    public bool IsPaused;
 
     [Header("Movement Settings")]
     public bool analogMovement;
@@ -38,6 +39,10 @@ public class InputManager: GameplayMonoBehaviour{
     public void OnLaunchBall(InputValue value) {
         Launch(value.isPressed);
     }
+
+    public void OnPause(InputValue value) {
+        IsPaused = !IsPaused;
+    }
 #endif
 
 
@@ -60,7 +65,6 @@ public class InputManager: GameplayMonoBehaviour{
     public void Launch(bool _newLaunchState) {
         IsLaunching = _newLaunchState;
     }
-
 
     private void OnApplicationFocus(bool hasFocus) {
         SetCursorState(cursorLocked);
