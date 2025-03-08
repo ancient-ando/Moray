@@ -25,6 +25,6 @@ public class Ball : GameplayMonoBehaviour {
         if (_rb.velocity.magnitude > MaxSpeed) {
             _rb.velocity = _rb.velocity.normalized * MaxSpeed;
         }
-        Blackboard.s_Instance.UpdateBallSpeed(_rb.velocity.magnitude * Multiplier);
+        Blackboard.s_Instance.UpdateBallSpeed(_rb.velocity.magnitude);
     }
 }

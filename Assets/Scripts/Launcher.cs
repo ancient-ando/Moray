@@ -62,5 +62,6 @@ public class Launcher : GameplayMonoBehaviour {
     public void LaunchBall() {
         _ballRb.AddForce(Vector2.up * (Charge * 10), ForceMode2D.Impulse);
         _isCharging = false;
+        Charge = 0;
     }
 }

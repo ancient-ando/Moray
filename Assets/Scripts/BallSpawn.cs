@@ -14,6 +14,6 @@ public class BallSpawn : MonoBehaviour {
     }
 
     void SpawnBall() {
-        Instantiate(BallPrefab);
+        Instantiate(BallPrefab, transform.position, Quaternion.identity);
     }
 }
