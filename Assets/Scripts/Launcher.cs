@@ -19,7 +19,7 @@ public class Launcher : GameplayMonoBehaviour {
         Blackboard.s_Instance.OnBallCharge += OnCharging;
     }
     void Start() {
-
+        Blackboard.s_Instance.OnMultiBallSpawn?.Invoke(4);
     }
     protected override void OnDestroy() {
         base.OnDestroy();

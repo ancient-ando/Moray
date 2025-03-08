@@ -19,6 +19,7 @@ public class Blackboard : MonoBehaviour {
     public UnityAction OnBallEnterHole;
     public UnityAction OnLivesChanged;
     public UnityAction OnBallCountChanged;
+    public UnityAction<int> OnMultiBallSpawn;
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
     public int Lives { get; private set; } = 3;
