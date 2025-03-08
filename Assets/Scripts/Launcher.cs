@@ -8,6 +8,7 @@ public class Launcher : GameplayMonoBehaviour {
     bool _isCharging = false;
     public float Charge = 0;
     public float ChargeRate = 3;
+    public float MaxCharge = 50;
 
     Rigidbody2D _ballRb;
 
@@ -48,6 +49,7 @@ public class Launcher : GameplayMonoBehaviour {
                 yield return null;
             }
             Charge += Time.fixedDeltaTime * ChargeRate;
+            Charge = Mathf.Clamp(Charge, 0, MaxCharge);
             yield return new WaitForFixedUpdate();
         }
     }
@@ -60,7 +62,7 @@ public class Launcher : GameplayMonoBehaviour {
     }
 
     public void LaunchBall() {
-        _ballRb.AddForce(Vector2.up * (Charge * 10), ForceMode2D.Impulse);
+        _ballRb.AddForce(Vector2.up * Charge, ForceMode2D.Impulse);
         _isCharging = false;
         Charge = 0;
     }
