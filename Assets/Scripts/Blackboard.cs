@@ -18,9 +18,12 @@ public class Blackboard : MonoBehaviour {
     public UnityAction OnSpawnBall;
     public UnityAction OnBallEnterHole;
     public UnityAction OnLivesChanged;
+    public UnityAction<int> OnScoreBoard;
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
     public int Lives { get; private set; } = 3;
+    public int CurrentScore { get; private set; } = 0;
+
 
     InputManager _inputs;
 
@@ -56,6 +59,11 @@ public class Blackboard : MonoBehaviour {
     public void ModifyLives(int delta) {
         Lives+= delta;
         OnLivesChanged?.Invoke();
+    }
+
+    public void AddScore(int points) { 
+        CurrentScore += points; 
+        OnScoreBoard?.Invoke(CurrentScore);
     }
 
     #region Pause/Resume

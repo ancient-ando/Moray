@@ -1,26 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class PinballScore : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText; // Drag your TMP object here in Inspector
+    public TextMeshProUGUI scoreText;
     private int score = 0;
 
-    void Start()
+    void Awake()
     {
+        Blackboard.s_Instance.OnScoreBoard += UpdateScore;
         UpdateScoreDisplay();
     }
 
-    public void AddScore(int points)
-    {
-        score += points;
+    void OnDestroy() {
+        Blackboard.s_Instance.OnScoreBoard -= UpdateScore;
+    }
+
+    void UpdateScore(int newScore) {
+        score = newScore;
         UpdateScoreDisplay();
     }
 
-    void UpdateScoreDisplay()
-    {
-        scoreText.text = score.ToString("D6"); // Forces 6 digits, e.g., "000042"
+    void UpdateScoreDisplay() {
+        scoreText.text = score.ToString("D6"); // 6-digit DMD style
     }
 }
