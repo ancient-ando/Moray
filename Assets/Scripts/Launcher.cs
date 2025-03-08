@@ -60,7 +60,6 @@ public class Launcher : GameplayMonoBehaviour {
     }
 
     public void LaunchBall() {
-        _ballRb.simulated = true;
         _ballRb.AddForce(Vector2.up * (Charge * 10), ForceMode2D.Impulse);
         _isCharging = false;
     }
