@@ -636,6 +636,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &219391142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219391144}
+  - component: {fileID: 219391143}
+  m_Layer: 0
+  m_Name: SoftBumper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &219391143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219391142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033650f359bd32b46899ccd24b2c2d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <World>k__BackingField: {fileID: 252753885}
+  <SerializedData>k__BackingField: {fileID: 0}
+  physicalMaterial: {fileID: 0}
+--- !u!4 &219391144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219391142}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &224835325
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +897,7 @@ GameObject:
   - component: {fileID: 252753882}
   - component: {fileID: 252753883}
   - component: {fileID: 252753884}
+  - component: {fileID: 252753885}
   m_Layer: 0
   m_Name: Blackboard
   m_TagString: Untagged
@@ -905,6 +953,7 @@ MonoBehaviour:
   RightPaddle: 0
   IsCharging: 0
   IsLaunching: 0
+  IsPaused: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -957,9 +1006,30 @@ MonoBehaviour:
   RightPaddle: 0
   IsCharging: 0
   IsLaunching: 0
+  IsPaused: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &252753885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252753879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206528562c039c343915794e2d48b72f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <TargetAssemblies>k__BackingField:
+  - andywiecko.PBD2D.Components
+  - andywiecko.PBD2D.Systems
+  - andywiecko.PBD2D.Core
+  targetAssemblies:
+  - {fileID: 5897886265953266890, guid: 91491537b10b63a4a84d2a812ebae873, type: 3}
+  - {fileID: 5897886265953266890, guid: a49c56f9dd8c5c140a2a6fcdcdbc1acc, type: 3}
+  - {fileID: 5897886265953266890, guid: e5641b1cd1a885343867fa13943a7352, type: 3}
 --- !u!1 &291104708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1155,6 +1225,7 @@ MonoBehaviour:
   _ballDetected: 0
   Charge: 0
   ChargeRate: 3
+  MaxCharge: 50
 --- !u!61 &460267160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3128,3 +3199,4 @@ SceneRoots:
   - {fileID: 1250501790}
   - {fileID: 679084014}
   - {fileID: 5204489879990077924}
+  - {fileID: 219391144}

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.andywiecko.pbd2d": "0.2.0",
     "com.unity.collab-proxy": "2.7.1",
     "com.unity.feature.2d": "2.0.0",
     "com.unity.ide.rider": "3.0.24",
@@ -42,5 +43,21 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  }
+  },
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com/",
+      "scopes": [
+        "com.andywiecko.burst.collections",
+        "com.andywiecko.burst.mathutils",
+        "com.andywiecko.burst.triangulator",
+        "com.andywiecko.ecs",
+        "com.andywiecko.pbd2d"
+      ]
+    }
+  ],
+  "testables": [
+    "com.andywiecko.pbd2d"
+  ]
 }

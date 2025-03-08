@@ -1230,12 +1230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e8c6e521d03d0409449a082068beab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pausable: 0
+  _pausable: 1
   _initialised: 0
   _ballDetected: 0
   Charge: 0
-  ChargeRate: 20
-  MaxCharge: 50
+  ChargeRate: 30
+  MaxCharge: 100
 --- !u!61 &460267160
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4190,26 +4190,6 @@ PrefabInstance:
     - target: {fileID: 1885438542694974005, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
       propertyPath: m_Name
       value: Hole (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6095054420468471238, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
-      propertyPath: m_Radius
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427658853707732258, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 2047720977, guid: d829b028733e2b845bbbc74d940afb8b, type: 3}
-    - target: {fileID: 7427658853707732258, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427658853707732258, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7427658853707732258, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8068065584934654292, guid: aa8434722bc7c9b48852ea01ab33ff50, type: 3}
       propertyPath: m_LocalScale.x
