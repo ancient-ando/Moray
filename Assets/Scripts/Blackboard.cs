@@ -16,6 +16,7 @@ public class Blackboard : MonoBehaviour {
     public UnityAction<PaddleType> OnPaddleReset;
     public UnityAction OnBallCharge;
     public UnityAction OnBallLost;
+    public UnityAction OnBallEnterHole;
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
 
