@@ -9,8 +9,13 @@ public class Ball : GameplayMonoBehaviour {
 
     protected override void Awake() {
         base.Awake();
-
+        Blackboard.s_Instance.ModifyBallCount(1);
         _rb = GetComponent<Rigidbody2D>();
+    }
+
+    protected override void OnDestroy() {
+        base.OnDestroy();
+        
     }
 
     protected override void PostPause() {
