@@ -23,7 +23,7 @@ public class Hole : GameplayMonoBehaviour {
             other.transform.position = transform.position;
             _ball.simulated = false;
             _ball.gameObject.AddComponent<Bumper>();
-            Destroy(_ball.GetComponent<Ball>());
+            Blackboard.s_Instance.ModifyBallCount(-1);
             Destroy(gameObject);
         }
     }

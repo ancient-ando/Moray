@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KillBox : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.CompareTag("Ball")) {
+        if (collision.CompareTag("Ball") || collision.CompareTag("Planet")) {
             DestroyBall(collision.gameObject);
         }
     }
