@@ -13,7 +13,7 @@ public class KillBox : MonoBehaviour {
         Destroy(_ball);
         Blackboard.s_Instance.ModifyBallCount(-1);
         if (Blackboard.s_Instance.BallsActive == 0) {
-            if (Blackboard.s_Instance.Lives > 0) {
+            if (Blackboard.s_Instance.Lives != 0) {
                 Blackboard.s_Instance.ModifyLives(-1);
                 Blackboard.s_Instance.OnSpawnBall?.Invoke();
             }

@@ -13,10 +13,12 @@ public class IntroManager : MonoBehaviour
         ShowIntroScreen();
 
         Blackboard.s_Instance.OnGameStart += HideIntroScreen;
+        Blackboard.s_Instance.OnGameReset += ShowIntroScreen;
     }
 
     private void OnDestroy() {
         Blackboard.s_Instance.OnGameStart -= HideIntroScreen;
+        Blackboard.s_Instance.OnGameReset -= ShowIntroScreen;
     }
 
 

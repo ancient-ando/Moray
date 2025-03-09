@@ -23,16 +23,17 @@ public class Blackboard : MonoBehaviour {
     public UnityAction<int> OnMultiBallSpawn;
     public UnityAction<int> OnScoreBoard;
     public UnityAction OnGameStart;
+    public UnityAction OnGameReset;
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
-    public bool IsGameStarted { get; private set; }
+    public bool IsGameStarted;
     public int Lives { get; private set; } = 3;
-    
+
     //KM - Code for Score
     public int CurrentScore { get; private set; } = 0;
     public HighScoreData highScoreData;
 
-    public int BallsActive{ get; private set; }
+    public int BallsActive { get; private set; }
 
     InputManager _inputs;
 
@@ -46,8 +47,7 @@ public class Blackboard : MonoBehaviour {
         Debug.Log("Blackboard Initialised");
     }
 
-    void Update()
-    {
+    void Update() {
         if (_inputs.LeftPaddle)
             OnPaddleTriggered?.Invoke(PaddleType.Left);
         else
@@ -66,10 +66,11 @@ public class Blackboard : MonoBehaviour {
         if (Paused && !_inputs.IsPaused)
             Resume();
 
-        if(_inputs.GameStarted && !IsGameStarted) {
+        if (_inputs.GameStarted && !IsGameStarted) {
             IsGameStarted = true;
             OnGameStart?.Invoke();
         }
+
     }
 
     public void UpdateBallSpeed(float speed) {
@@ -78,7 +79,7 @@ public class Blackboard : MonoBehaviour {
     }
 
     public void ModifyLives(int delta) {
-        Lives+= delta;
+        Lives += delta;
         OnLivesChanged?.Invoke();
     }
 
@@ -87,8 +88,8 @@ public class Blackboard : MonoBehaviour {
         OnBallCountChanged?.Invoke();
     }
 
-    public void AddScore(int points) { 
-        CurrentScore += points; 
+    public void AddScore(int points) {
+        CurrentScore += points;
         OnScoreBoard?.Invoke(CurrentScore);
     }
 
@@ -112,12 +113,18 @@ public class Blackboard : MonoBehaviour {
             highScoreData.AddScore(CurrentScore);
         }
     }
-    public void ResetScore()
-    {
+    public void ResetScore() {
         CurrentScore = 0;
         OnScoreBoard?.Invoke(CurrentScore);
     }
 
-    
+    public void Reset() {
+        ResetScore();
+        _inputs.GameStarted = false;
+        IsGameStarted = false;
+        OnGameReset?.Invoke();
+        Lives = 3;
+    }
+
     #endregion
 }

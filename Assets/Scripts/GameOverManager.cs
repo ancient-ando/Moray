@@ -1,35 +1,30 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
-public class GameOverManager : MonoBehaviour
-{
+public class GameOverManager : MonoBehaviour {
     public GameObject gameOverScreen;
     public TextMeshProUGUI finalScoreText;
     public TextMeshProUGUI highScoreMessage;
     public TextMeshProUGUI resetPromptText;
     public AudioSource gameOverSound;
 
-    void Awake()
-    {
+    void Awake() {
         Blackboard.s_Instance.OnLivesChanged += CheckGameOver;
         gameOverScreen.SetActive(false);
     }
 
-    void OnDestroy()
-    {
+    void OnDestroy() {
         Blackboard.s_Instance.OnLivesChanged -= CheckGameOver;
     }
 
-    void CheckGameOver()
-    {
-        if (Blackboard.s_Instance.Lives <= 0)
-        {
+    void CheckGameOver() {
+        if (Blackboard.s_Instance.Lives < 0) {
             ShowGameOver();
         }
     }
 
-    void ShowGameOver()
-    {
+    void ShowGameOver() {
         Blackboard.s_Instance.Pause();
         gameOverScreen.SetActive(true);
         Cursor.visible = true;
@@ -43,14 +38,19 @@ public class GameOverManager : MonoBehaviour
                               finalScore > highScores[highScores.Count - 1];
         highScoreMessage.text = isNewHighScore ? "New High Score!" : "";
 
-        if (gameOverSound != null)
-        {
+        if (gameOverSound != null) {
             gameOverSound.Play();
         }
+        StartCoroutine(Reset());
     }
 
-    public void HideGameOverScreen() // New method
-    {
+    private IEnumerator Reset() {
+        yield return new WaitForSeconds(3);
+        HideGameOverScreen();
+    }
+
+    public void HideGameOverScreen() {
         gameOverScreen.SetActive(false);
+        Blackboard.s_Instance.Reset();
     }
 }

@@ -15,21 +15,20 @@ public class Hole : GameplayMonoBehaviour {
         }
     }
 
-    
+
 
     IEnumerator DelayedDestroy() {
         _ball.simulated = false;
         _ball.velocity = Vector2.zero;
-        while (Blackboard.s_Instance.Paused) {
-            yield return new WaitForEndOfFrame();
-        }
-        while (true) {
-            yield return new WaitForSeconds(1);
-            break;
-        }
+        //while (Blackboard.s_Instance.Paused) {
+        //    yield return new WaitForEndOfFrame();
+        //}
+
+        yield return new WaitForSeconds(1);
+
 
         //add some score of something idk
-        
+
         LaunchBall();
 
     }
@@ -37,7 +36,7 @@ public class Hole : GameplayMonoBehaviour {
     void LaunchBall() {
         Vector2 direction = GetRandomDirection2D();
         _ball.simulated = true;
-        _ball.AddForce(direction * 10, ForceMode2D.Impulse);
+        _ball.AddForce(direction * 1000, ForceMode2D.Impulse);
     }
 
     Vector2 GetRandomDirection2D() {
