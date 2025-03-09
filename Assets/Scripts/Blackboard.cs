@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Manager script that all other scripts can reference to handle game state and events
@@ -39,7 +40,8 @@ public class Blackboard : MonoBehaviour {
         Debug.Log("Blackboard Initialised");
     }
 
-    void Update() {
+    void Update()
+    {
         if (_inputs.LeftPaddle)
             OnPaddleTriggered?.Invoke(PaddleType.Left);
         else
@@ -49,8 +51,10 @@ public class Blackboard : MonoBehaviour {
         else
             OnPaddleReset?.Invoke(PaddleType.Right);
 
-        if(_inputs.IsCharging)
+        if (_inputs.IsCharging)
             OnBallCharge?.Invoke();
+
+        Debug.Log("LeftPaddle: " + _inputs.LeftPaddle + ", RightPaddle: " + _inputs.RightPaddle + ", Reset: " + _inputs.Reset);
     }
 
     public void UpdateBallSpeed(float speed) {
@@ -74,6 +78,8 @@ public class Blackboard : MonoBehaviour {
     public void Pause() {
         Paused = true;
         OnPause?.Invoke();
+        Debug.Log("Paused. Cursor Visible: " + Cursor.visible + ", Lock State: " + Cursor.lockState);
+
     }
 
     [ContextMenu("Resume")]
@@ -88,5 +94,12 @@ public class Blackboard : MonoBehaviour {
             highScoreData.AddScore(CurrentScore);
         }
     }
+    public void ResetScore()
+    {
+        CurrentScore = 0;
+        OnScoreBoard?.Invoke(CurrentScore);
+    }
+
+    
     #endregion
 }
