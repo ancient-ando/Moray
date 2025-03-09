@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 #endif
 
-public class InputManager: GameplayMonoBehaviour{
+public class InputManager : GameplayMonoBehaviour
+{
     [Header("Character Input Values")]
     public Vector2 move;
     public bool LeftPaddle;
@@ -53,14 +54,17 @@ public class InputManager: GameplayMonoBehaviour{
     public void LeftPaddleInput(bool newPaddleState) {
         LeftPaddle = newPaddleState;
     }
+#endif
 
-    public void RightPaddleInput(bool newPaddleState) {
-        RightPaddle = newPaddleState;
-    }
+    public void MoveInput(Vector2 newMoveDirection) { move = newMoveDirection; }
+    public void LeftPaddleInput(bool newPaddleState) { LeftPaddle = newPaddleState; }
+    public void RightPaddleInput(bool newPaddleState) { RightPaddle = newPaddleState; }
+    public void Charge(bool _newChargingState) { IsCharging = _newChargingState; }
+    public void Launch(bool _newLaunchState) { IsLaunching = _newLaunchState; }
+    public void ResetInput(bool newResetState) { Reset = newResetState; }
 
-    public void Charge(bool _newChargingState) {
-        IsCharging = _newChargingState;
-    }
+    private void OnApplicationFocus(bool hasFocus) { SetCursorState(cursorLocked); }
+    private void SetCursorState(bool newState) { Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None; }
 
     public void Launch(bool _newLaunchState) {
         IsLaunching = _newLaunchState;

@@ -17,9 +17,7 @@ public class KillBox : MonoBehaviour {
                 Blackboard.s_Instance.ModifyLives(-1);
                 Blackboard.s_Instance.OnSpawnBall?.Invoke();
             }
-            else {
-                Debug.Log("Game Over");
-            }
+            // No CheckHighScore here—GameOverManager handles it
         }
     }
 }

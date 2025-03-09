@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// Manager script that all other scripts can reference to handle game state and events
@@ -20,9 +21,15 @@ public class Blackboard : MonoBehaviour {
     public UnityAction OnLivesChanged;
     public UnityAction OnBallCountChanged;
     public UnityAction<int> OnMultiBallSpawn;
+    public UnityAction<int> OnScoreBoard;
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
     public int Lives { get; private set; } = 3;
+    
+    //KM - Code for Score
+    public int CurrentScore { get; private set; } = 0;
+    public HighScoreData highScoreData;
+
     public int BallsActive{ get; private set; }
 
     InputManager _inputs;
@@ -37,7 +44,8 @@ public class Blackboard : MonoBehaviour {
         Debug.Log("Blackboard Initialised");
     }
 
-    void Update() {
+    void Update()
+    {
         if (_inputs.LeftPaddle)
             OnPaddleTriggered?.Invoke(PaddleType.Left);
         else
@@ -72,12 +80,19 @@ public class Blackboard : MonoBehaviour {
         OnBallCountChanged?.Invoke();
     }
 
+    public void AddScore(int points) { 
+        CurrentScore += points; 
+        OnScoreBoard?.Invoke(CurrentScore);
+    }
+
     #region Pause/Resume
 
     [ContextMenu("Pause")]
     public void Pause() {
         Paused = true;
         OnPause?.Invoke();
+        Debug.Log("Paused. Cursor Visible: " + Cursor.visible + ", Lock State: " + Cursor.lockState);
+
     }
 
     [ContextMenu("Resume")]
@@ -85,5 +100,19 @@ public class Blackboard : MonoBehaviour {
         Paused = false;
         OnResume?.Invoke();
     }
+
+    //KM - This should update the highscores?
+    public void CheckHighScore() {
+        if (highScoreData != null) {
+            highScoreData.AddScore(CurrentScore);
+        }
+    }
+    public void ResetScore()
+    {
+        CurrentScore = 0;
+        OnScoreBoard?.Invoke(CurrentScore);
+    }
+
+    
     #endregion
 }
