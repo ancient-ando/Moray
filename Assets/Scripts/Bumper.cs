@@ -3,6 +3,11 @@ using UnityEngine;
 public class Bumper : GameplayMonoBehaviour {
 
     public float BaseScore = 1000f;
+    AudioSource _sfx;
+
+    protected override void Awake() {
+        _sfx = GetComponent<AudioSource>();
+    }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision) {
         Rigidbody2D _rb = collision.rigidbody;
@@ -13,6 +18,7 @@ public class Bumper : GameplayMonoBehaviour {
         
         float _score = BaseScore * _velocity;
         Blackboard.s_Instance.OnScoreBoard?.Invoke((int)_score);
+        _sfx.Play();
     }
 
 }

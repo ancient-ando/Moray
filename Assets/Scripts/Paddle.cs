@@ -10,7 +10,7 @@ public class Paddle : GameplayMonoBehaviour {
     public PaddleType PaddleType;
     public float Torque = 1000;
     Rigidbody2D _rb;
-    
+    AudioSource _sfx;
 
     protected override void Awake() {
         base.Awake();
@@ -19,6 +19,7 @@ public class Paddle : GameplayMonoBehaviour {
         Blackboard.s_Instance.OnPaddleReset += OnPaddleReset;
 
         _rb = GetComponent<Rigidbody2D>();
+        _sfx = GetComponent<AudioSource>();
     }
 
     protected override void OnDestroy() {
@@ -37,6 +38,8 @@ public class Paddle : GameplayMonoBehaviour {
             _rb.AddTorque(Torque);
         else
             _rb.AddTorque(-Torque);
+
+        _sfx.Play();
     }
 
     void OnPaddleReset(PaddleType _paddleType) {

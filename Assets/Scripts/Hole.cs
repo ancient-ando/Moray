@@ -8,6 +8,11 @@ public class Hole : GameplayMonoBehaviour {
     int _targetBallAmount = 1;
     int _ballsInHole = 0;
     bool _holeBlocked = false;
+    AudioSource _sfx;
+
+    protected override void Awake() {
+        _sfx = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Ball")) {
@@ -26,6 +31,7 @@ public class Hole : GameplayMonoBehaviour {
             Blackboard.s_Instance.ModifyBallCount(-1);
             Destroy(gameObject);
         }
+        _sfx.Play();
     }
 
 

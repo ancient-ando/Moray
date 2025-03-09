@@ -6,11 +6,13 @@ public class Ball : GameplayMonoBehaviour {
     Rigidbody2D _rb;
     public float Multiplier = 1;
     public float MaxSpeed = 10;
+    AudioSource _sfx;
 
     protected override void Awake() {
         base.Awake();
         Blackboard.s_Instance.ModifyBallCount(1);
         _rb = GetComponent<Rigidbody2D>();
+        _sfx = GetComponent<AudioSource>();
     }
 
     protected override void OnDestroy() {
@@ -24,6 +26,10 @@ public class Ball : GameplayMonoBehaviour {
 
     protected override void PostResume() {
         _rb.simulated = true;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        _sfx.Play();
     }
 
     private void FixedUpdate() {

@@ -11,11 +11,13 @@ public class Launcher : GameplayMonoBehaviour {
     public float MaxCharge = 50;
 
     Rigidbody2D _ballRb;
+    AudioSource _sfx;
 
     protected override void Awake() {
         base.Awake();
 
         Blackboard.s_Instance.OnBallCharge += OnCharging;
+        _sfx = GetComponent<AudioSource>();
     }
     
     protected override void OnDestroy() {
@@ -62,5 +64,6 @@ public class Launcher : GameplayMonoBehaviour {
         _ballRb.AddForce(Vector2.up * Charge, ForceMode2D.Impulse);
         _isCharging = false;
         Charge = 0;
+        _sfx.Play();
     }
 }
