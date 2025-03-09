@@ -80,6 +80,10 @@ PrefabInstance:
       value: Mars
       objectReference: {fileID: 0}
     - target: {fileID: 2507983565929206285, guid: f05e0998c591d3148880fb0047b8061e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2507983565929206285, guid: f05e0998c591d3148880fb0047b8061e, type: 3}
       propertyPath: m_TagString
       value: Planet
       objectReference: {fileID: 0}
@@ -87,5 +91,9 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 8.21
       objectReference: {fileID: 0}
+    - target: {fileID: 6854147113636641598, guid: f05e0998c591d3148880fb0047b8061e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 7311bff5f7a86ff4eb6bb19093443326, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f05e0998c591d3148880fb0047b8061e, type: 3}

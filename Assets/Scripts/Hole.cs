@@ -26,7 +26,8 @@ public class Hole : GameplayMonoBehaviour {
             _holeBlocked = true;
             _ball = other.GetComponent<Rigidbody2D>();
             other.transform.position = transform.position;
-            _ball.simulated = false;
+            _ball.bodyType = RigidbodyType2D.Static;
+            _ball.simulated = true;
             _ball.gameObject.AddComponent<Bumper>();
             Blackboard.s_Instance.ModifyBallCount(-1);
             Destroy(gameObject);
