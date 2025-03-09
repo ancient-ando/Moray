@@ -6,7 +6,6 @@ using TMPro;
 public class PinballScore : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    private int score = 0;
 
     void Awake()
     {
@@ -19,11 +18,11 @@ public class PinballScore : MonoBehaviour
     }
 
     void UpdateScore(int newScore) {
-        score += newScore;
+        Blackboard.s_Instance.CurrentScore += newScore;
         UpdateScoreDisplay();
     }
 
     void UpdateScoreDisplay() {
-        scoreText.text = score.ToString("D6"); // 6-digit DMD style
+        scoreText.text = Blackboard.s_Instance.CurrentScore.ToString("D6"); // 6-digit DMD style
     }
 }

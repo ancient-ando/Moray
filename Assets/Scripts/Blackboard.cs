@@ -33,7 +33,7 @@ public class Blackboard : MonoBehaviour {
     public int HolesFilledCount { get; private set; } = 0;
 
     //KM - Code for Score
-    public int CurrentScore { get; private set; } = 0;
+    public int CurrentScore;
     public HighScoreData highScoreData;
 
     public int BallsActive { get; private set; }
