@@ -22,8 +22,10 @@ public class Blackboard : MonoBehaviour {
     public UnityAction OnBallCountChanged;
     public UnityAction<int> OnMultiBallSpawn;
     public UnityAction<int> OnScoreBoard;
+    public UnityAction OnGameStart;
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
+    public bool IsGameStarted { get; private set; }
     public int Lives { get; private set; } = 3;
     
     //KM - Code for Score
@@ -63,6 +65,11 @@ public class Blackboard : MonoBehaviour {
         else
         if (Paused && !_inputs.IsPaused)
             Resume();
+
+        if(_inputs.GameStarted && !IsGameStarted) {
+            IsGameStarted = true;
+            OnGameStart?.Invoke();
+        }
     }
 
     public void UpdateBallSpeed(float speed) {

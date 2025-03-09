@@ -11,26 +11,20 @@ public class IntroManager : MonoBehaviour
     void Awake()
     {
         ShowIntroScreen();
+
+        Blackboard.s_Instance.OnGameStart += HideIntroScreen;
     }
 
-#if ENABLE_INPUT_SYSTEM
-    public void OnReset(InputValue value)
-    {
-        if (value.isPressed && introScreen.activeSelf)
-        {
-            Debug.Log("Start Pressed—Starting Game!");
-            HideIntroScreen();
-        }
+    private void OnDestroy() {
+        Blackboard.s_Instance.OnGameStart -= HideIntroScreen;
     }
-#endif
+
 
     public void ShowIntroScreen()
     {
         Debug.Log("ShowIntroScreen Called");
         introScreen.SetActive(true);
         Debug.Log("Intro Active: " + introScreen.activeSelf);
-        Blackboard.s_Instance.Pause();
-        Debug.Log("Paused: " + Blackboard.s_Instance.Paused);
 
         var highScores = Blackboard.s_Instance.highScoreData.GetHighScores();
         string displayText = "High Scores:\n";
