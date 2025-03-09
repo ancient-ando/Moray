@@ -19,7 +19,7 @@ public class PinballScore : MonoBehaviour
     }
 
     void UpdateScore(int newScore) {
-        score = newScore;
+        score += newScore;
         UpdateScoreDisplay();
     }
 

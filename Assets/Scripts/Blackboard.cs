@@ -17,17 +17,19 @@ public class Blackboard : MonoBehaviour {
     public UnityAction<PaddleType> OnPaddleReset;
     public UnityAction OnBallCharge;
     public UnityAction OnSpawnBall;
-    public UnityAction OnBallEnterHole;
+    public UnityAction OnFilledHolesChanged;
     public UnityAction OnLivesChanged;
     public UnityAction OnBallCountChanged;
-    public UnityAction<int> OnMultiBallSpawn;
+    public UnityAction OnMultiBallSpawn;
     public UnityAction<int> OnScoreBoard;
     public UnityAction OnGameStart;
     public UnityAction OnGameReset;
+
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;
     public bool IsGameStarted;
     public int Lives { get; private set; } = 3;
+    public int HolesFilledCount { get; private set; } = 0;
 
     //KM - Code for Score
     public int CurrentScore { get; private set; } = 0;
@@ -106,7 +108,7 @@ public class Blackboard : MonoBehaviour {
         Paused = false;
         OnResume?.Invoke();
     }
-
+    #endregion
     //KM - This should update the highscores?
     public void CheckHighScore() {
         if (highScoreData != null) {
@@ -126,5 +128,8 @@ public class Blackboard : MonoBehaviour {
         Lives = 3;
     }
 
-    #endregion
+    public void ChangeHoleFilledCount(int delta) {
+        HolesFilledCount += delta;
+        OnFilledHolesChanged?.Invoke();
+    }
 }

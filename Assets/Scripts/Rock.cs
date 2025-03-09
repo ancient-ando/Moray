@@ -13,8 +13,10 @@ public class Rock : Bumper {
 
     protected override void OnCollisionEnter2D(Collision2D other) {
         base.OnCollisionEnter2D(other);
+    }
 
-        Destroy(gameObject, 1);
+    private void OnCollisionExit2D(Collision2D collision) {
+        Destroy(gameObject);
     }
 
     protected override void PostPause() {

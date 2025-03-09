@@ -8,25 +8,33 @@ public class MultiBallSpawn : MonoBehaviour {
 
     private void Awake() {
         Blackboard.s_Instance.OnMultiBallSpawn += GetSpawnPoints;
+        Blackboard.s_Instance.OnFilledHolesChanged += CheckHoleFilledCount;
 
         _spawnArea = GetComponent<BoxCollider2D>();
     }
 
     private void OnDestroy() {
         Blackboard.s_Instance.OnMultiBallSpawn -= GetSpawnPoints;
+        Blackboard.s_Instance.OnFilledHolesChanged -= CheckHoleFilledCount;
     }
 
-    void GetSpawnPoints(int _amount) {
-        for(int i=0; i<_amount; i++) {
+    void GetSpawnPoints() {
+        for(int i=0; i<BallPrefab.Length; i++) {
             //Choose a random point within the Collider area
             float x = Random.Range(transform.position.x - _spawnArea.size.x / 2, transform.position.x + _spawnArea.size.x / 2);
             float y = Random.Range(transform.position.y - _spawnArea.size.y / 2, transform.position.y + _spawnArea.size.y / 2);
 
-            SpawnBalls(new Vector3(x, y, 0), Random.Range(0, BallPrefab.Length));
+            Instantiate(BallPrefab[i], new Vector2(x,y), Quaternion.identity);
         }
     }
 
-    void SpawnBalls(Vector3 _spawnPos, int _prefabIndex) {
+    public void SpawnBalls(Vector3 _spawnPos, int _prefabIndex) {
         Instantiate(BallPrefab[_prefabIndex], _spawnPos, Quaternion.identity);
+    }
+
+    void CheckHoleFilledCount() {
+        if (Blackboard.s_Instance.HolesFilledCount ==3) {
+            Blackboard.s_Instance.OnMultiBallSpawn?.Invoke();
+        }
     }
 }

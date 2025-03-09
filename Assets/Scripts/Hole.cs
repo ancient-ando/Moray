@@ -5,19 +5,21 @@ using UnityEngine;
 public class Hole : GameplayMonoBehaviour {
 
     Rigidbody2D _ball;
+    int _targetBallAmount = 1;
+    int _ballsInHole = 0;
 
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.CompareTag("Ball")) {
             _ball = other.GetComponent<Rigidbody2D>();
-            Blackboard.s_Instance.OnBallEnterHole?.Invoke();
             other.transform.position = transform.position;
-            StartCoroutine(DelayedDestroy());
+            _ballsInHole++;
+            StartCoroutine(DelayedLaunch());
         }
     }
 
 
 
-    IEnumerator DelayedDestroy() {
+    IEnumerator DelayedLaunch() {
         _ball.simulated = false;
         _ball.velocity = Vector2.zero;
         //while (Blackboard.s_Instance.Paused) {
@@ -37,6 +39,11 @@ public class Hole : GameplayMonoBehaviour {
         Vector2 direction = GetRandomDirection2D();
         _ball.simulated = true;
         _ball.AddForce(direction * 1000, ForceMode2D.Impulse);
+
+        if (_ballsInHole >= _targetBallAmount) {
+            Blackboard.s_Instance.ChangeHoleFilledCount(1);
+            Destroy(gameObject);
+        }
     }
 
     Vector2 GetRandomDirection2D() {
