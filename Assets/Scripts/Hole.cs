@@ -15,16 +15,34 @@ public class Hole : GameplayMonoBehaviour {
         }
     }
 
+    
+
     IEnumerator DelayedDestroy() {
         _ball.simulated = false;
-        while(Blackboard.s_Instance.Paused) {
+        _ball.velocity = Vector2.zero;
+        while (Blackboard.s_Instance.Paused) {
             yield return new WaitForEndOfFrame();
         }
+        while (true) {
+            yield return new WaitForSeconds(1);
+            break;
+        }
 
-        yield return new WaitForSeconds(1);
         //add some score of something idk
-        _ball.simulated = true;
         
+        LaunchBall();
+
+    }
+
+    void LaunchBall() {
+        Vector2 direction = GetRandomDirection2D();
+        _ball.simulated = true;
+        _ball.AddForce(direction * 10, ForceMode2D.Impulse);
+    }
+
+    Vector2 GetRandomDirection2D() {
+        float angle = Random.Range(0f, 359f);
+        return new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
     }
 
 }
