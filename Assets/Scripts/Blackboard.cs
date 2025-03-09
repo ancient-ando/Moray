@@ -98,8 +98,6 @@ public class Blackboard : MonoBehaviour {
     public void Pause() {
         Paused = true;
         OnPause?.Invoke();
-        Debug.Log("Paused. Cursor Visible: " + Cursor.visible + ", Lock State: " + Cursor.lockState);
-
     }
 
     [ContextMenu("Resume")]

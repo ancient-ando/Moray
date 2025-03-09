@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class Bumper : GameplayMonoBehaviour {
 
-    public float Force = 10;
+    public float BaseScore = 1000f;
 
     protected virtual void OnCollisionEnter2D(Collision2D collision) {
-        Vector2 _normal = collision.GetContact(0).normal;
+        Rigidbody2D _rb = collision.rigidbody;
+
+        //Multiply score given based on how hard the bumper was hit and make sure
+        //the score given is never less than the base score
+        float _velocity = 1 + _rb.velocity.magnitude;
         
-        //Rigidbody2D _rb = collision.rigidbody;
-        //_rb.AddRelativeForce(_normal * (Blackboard.s_Instance.BallSpeed * -Force), ForceMode2D.Impulse);
+        float _score = BaseScore * _velocity;
+        Blackboard.s_Instance.OnScoreBoard?.Invoke((int)_score);
     }
 
 }
