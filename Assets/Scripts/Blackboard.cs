@@ -24,6 +24,7 @@ public class Blackboard : MonoBehaviour {
     public UnityAction<int> OnScoreBoard;
     public UnityAction OnGameStart;
     public UnityAction OnGameReset;
+    public UnityAction OnGameOver;
 
     public bool IsCharging { get { return _inputs.IsCharging; } }
     public bool BallLaunched;

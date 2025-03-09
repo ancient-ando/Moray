@@ -50,7 +50,7 @@ public class Hole : GameplayMonoBehaviour {
         Vector2 direction = GetRandomDirection2D();
         _ball.simulated = true;
         _ball.AddForce(direction * 1000, ForceMode2D.Impulse);
-
+        Blackboard.s_Instance.OnScoreBoard?.Invoke(5000);
         if (_ballsInHole >= _targetBallAmount) {
             Blackboard.s_Instance.ChangeHoleFilledCount(1);
         }

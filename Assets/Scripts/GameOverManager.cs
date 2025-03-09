@@ -10,18 +10,12 @@ public class GameOverManager : MonoBehaviour {
     public AudioSource gameOverSound;
 
     void Awake() {
-        Blackboard.s_Instance.OnLivesChanged += CheckGameOver;
+        Blackboard.s_Instance.OnGameOver += ShowGameOver;
         gameOverScreen.SetActive(false);
     }
 
     void OnDestroy() {
-        Blackboard.s_Instance.OnLivesChanged -= CheckGameOver;
-    }
-
-    void CheckGameOver() {
-        if (Blackboard.s_Instance.Lives < 0) {
-            ShowGameOver();
-        }
+        Blackboard.s_Instance.OnGameOver -= ShowGameOver;
     }
 
     void ShowGameOver() {
