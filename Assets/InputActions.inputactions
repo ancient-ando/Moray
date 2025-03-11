@@ -74,11 +74,55 @@
                 },
                 {
                     "name": "",
+                    "id": "502325a8-455d-4465-9c08-947ff0dc21f3",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b7a67749-3f96-4b98-aca4-6738fae16820",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2dfb1f8b-83bc-414b-bb8d-76cd2bd5c844",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "RightPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "88e53d8b-a143-4c7e-9f72-2c1eb7b61c22",
+                    "path": "<Keyboard>/n",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightPaddle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4eab4593-9947-48c8-818c-ab5b39da86d7",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "RightPaddle",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -107,6 +151,17 @@
                 },
                 {
                     "name": "",
+                    "id": "6bfee7da-f528-4fe6-967e-89a403015595",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChargeBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8f34e562-d1d7-4c5e-9a77-8f34f1378d6f",
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
@@ -129,6 +184,17 @@
                 },
                 {
                     "name": "",
+                    "id": "27a700a2-6280-484b-840e-f8f846a1ecdb",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LaunchBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c78baaf1-24b2-4a04-9992-35b4fb8ba52d",
                     "path": "<Gamepad>/start",
                     "interactions": "",
@@ -140,11 +206,33 @@
                 },
                 {
                     "name": "",
+                    "id": "8c35689a-06c0-41d5-96bf-06b24e9063e7",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0f9afae7-d8f3-49e7-82fc-b70a3fe887c8",
                     "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "GameStart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "444938c2-ce3b-4394-b82a-1f65fae7db61",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "GameStart",
                     "isComposite": false,
                     "isPartOfComposite": false

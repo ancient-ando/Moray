@@ -31,7 +31,7 @@ public class GameOverManager : MonoBehaviour {
         bool isNewHighScore = highScores.Count < Blackboard.s_Instance.highScoreData.MaxEntries ||
                               finalScore > highScores[highScores.Count - 1];
         highScoreMessage.text = isNewHighScore ? "New High Score!" : "";
-
+        Blackboard.s_Instance.CheckHighScore();
         if (gameOverSound != null) {
             gameOverSound.Play();
         }
