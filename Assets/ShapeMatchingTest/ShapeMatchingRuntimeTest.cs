@@ -4,13 +4,13 @@
 
 // namespace andywiecko.PBD2D.Tests
 // {
-//     public class PointPointConnectorRuntimeTest : RuntimeTest
+//     public class ShapeMatchingRuntimeTest : RuntimeTest
 //     {
 //         [UnityTest]
 //         public IEnumerator Test()
 //         {
 //             yield return LoadSceneAsync();
-//             yield return new WaitForSeconds(5f);
+//             yield return new WaitForSeconds(3f);
 //         }
 //     }
 // }

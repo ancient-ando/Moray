@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: heavy
   m_EditorClassIdentifier: 
   <Friction>k__BackingField: 1
-  <Density>k__BackingField: 0.1
+  <Density>k__BackingField: 10
