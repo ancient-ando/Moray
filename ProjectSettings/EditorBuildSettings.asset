@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/sce_FinalArtTest.unity
     guid: 2a3746e5d4d063f469f1a84278c057b5
-  - enabled: 1
+  - enabled: 0
     path: Assets/ShapeMatchingTest/ShapeMatchingRuntimeTestScene.unity
     guid: 1fe0b61cca0df407c9bc36274a1d4fbc
   m_configObjects: {}
