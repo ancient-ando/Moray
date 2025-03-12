@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Compliance>k__BackingField: 0
-  <Stiffness>k__BackingField: 0.02
+  <Stiffness>k__BackingField: 0.002
 --- !u!114 &104616982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Compliance>k__BackingField: 0
-  <Stiffness>k__BackingField: 0.02
+  <Stiffness>k__BackingField: 0.002
 --- !u!1 &107685555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,9 +1597,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ExternalAcceleration>k__BackingField:
-    x: 1.13
+    x: 106.5
     y: 0
-  <Damping>k__BackingField: 0
+  <Damping>k__BackingField: 0.42
 --- !u!114 &1598496467
 MonoBehaviour:
   m_ObjectHideFlags: 0

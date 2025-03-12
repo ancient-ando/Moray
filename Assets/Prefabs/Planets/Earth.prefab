@@ -67,6 +67,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1317694131337869244, guid: f05e0998c591d3148880fb0047b8061e, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317694131337869244, guid: f05e0998c591d3148880fb0047b8061e, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1559855158956964483, guid: f05e0998c591d3148880fb0047b8061e, type: 3}
       propertyPath: m_Sprite
       value: 
